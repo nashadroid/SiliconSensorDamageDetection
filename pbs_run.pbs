@@ -1,0 +1,14 @@
+#PBS -A PAS1759
+#PBS -N SensorDamageDetection
+#PBS -l walltime=08:00:00
+#PBS -l nodes=1:ppn=40
+#PBS -j oe
+#
+# Makes sure we use the correct python
+module reset
+source $HOME/mypython/bin/activate
+which python
+#
+cd /users/PAS0035/nashad/osc_classes/PHYSICS6820/modules/finalProject_fall2020/SiliconSensorDamageDetection
+
+python -u AISiliconDamageDetectionFullData.py > pythonlog.txt
